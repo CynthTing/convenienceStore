@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>統家補貨中控台</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">統</div>
+          <div><strong>統家補貨</strong><span>Smart Replenish</span></div>
+        </div>
+        <div class="store-switcher">
+          <span class="eyebrow">目前門市</span>
+          <button id="storeButton" class="store-button">信義松仁店 <span>⌄</span></button>
+        </div>
+        <nav class="nav">
+          <button class="nav-item active" data-view="dashboard"><span>▦</span>補貨總覽</button>
+          <button class="nav-item" data-view="orders"><span>▤</span>補貨單紀錄</button>
+          <button class="nav-item" data-view="model"><span>◒</span>預測與模型</button>
+          <button class="nav-item" data-view="settings"><span>⚙</span>門市設定</button>
+        </nav>
+        <div class="sidebar-help">
+          <div class="help-icon">?</div>
+          <strong>需要協助嗎？</strong>
+          <p>查看 5 分鐘快速教學，立即上手自動補貨。</p>
+          <button id="tutorialButton" class="text-button">觀看操作導覽 →</button>
+        </div>
+        <div class="user-profile"><div class="avatar">林</div><div><strong>林店長</strong><span>門市管理者</span></div><span class="more">•••</span></div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div><span class="breadcrumb">門市管理 / 補貨總覽</span></div>
+          <div class="top-actions"><span class="sync-status"><i></i>資料已同步 · 10:42</span><button class="icon-button">⌕</button><button class="icon-button notification">♧<b></b></button></div>
+        </header>
+
+        <section id="dashboardView" class="view active-view">
+          <div class="page-heading">
+            <div><span class="eyebrow accent">TUE, OCT 13, 2026</span><h1>早安，林店長 <span>👋</span></h1><p>AI 已根據近期銷售與庫存，為您準備好今日補貨建議。</p></div>
+            <button id="reviewButton" class="primary-button">檢視補貨建議 <span>→</span></button>
+          </div>
+          <div class="metric-grid">
+            <article class="metric-card"><div class="metric-icon purple">⌁</div><div><span>今日待補貨品項</span><strong>18 <small>項</small></strong><em class="up">↑ 12.5% <i>較昨日</i></em></div></article>
+            <article class="metric-card"><div class="metric-icon orange">◷</div><div><span>預計補貨金額</span><strong>$9,720</strong><em>共 6 個品類</em></div></article>
+            <article class="metric-card"><div class="metric-icon green">✓</div><div><span>低庫存警示</span><strong>4 <small>項</small></strong><em class="danger">需要優先處理</em></div></article>
+            <article class="metric-card"><div class="metric-icon blue">⌁</div><div><span>預測準確率</span><strong>92.4<small>%</small></strong><em class="up">↑ 3.2% <i>近 30 日</i></em></div></article>
+          </div>
+          <div class="content-grid">
+            <section class="panel forecast-panel">
+              <div class="panel-header"><div><h2>銷售與需求預測</h2><span>近 7 日實際銷售 vs. AI 預測</span></div><select><option>最近 7 日</option><option>最近 30 日</option></select></div>
+              <div class="legend"><span><i class="legend-dot actual"></i>實際銷售</span><span><i class="legend-dot forecast"></i>AI 預測</span><span class="forecast-note">預測信心度 <b>高</b></span></div>
+              <div class="chart"><div class="y-labels"><span>400</span><span>300</span><span>200</span><span>100</span><span>0</span></div><div class="chart-area"><div class="grid-lines"><i></i><i></i><i></i><i></i><i></i></div><svg viewBox="0 0 600 190" preserveAspectRatio="none" aria-label="銷售趨勢圖"><path class="area" d="M0,135 C30,124 48,145 82,117 S131,80 166,112 S209,110 248,90 S299,106 330,74 S375,60 413,89 S460,52 497,68 S550,46 600,30 L600,190 L0,190Z"/><path class="line actual-line" d="M0,135 C30,124 48,145 82,117 S131,80 166,112 S209,110 248,90 S299,106 330,74 S375,60 413,89 S460,52 497,68 S550,46 600,30"/><path class="line forecast-line" d="M0,143 C44,132 57,139 91,122 S137,94 174,118 S214,115 254,98 S308,112 341,82 S384,70 423,96 S468,63 506,78 S553,56 600,43"/></svg><div class="x-labels"><span>10/07</span><span>10/08</span><span>10/09</span><span>10/10</span><span>10/11</span><span>10/12</span><span>今日</span></div></div></div>
+            </section>
+            <section class="panel health-panel"><div class="panel-header"><div><h2>庫存健康度</h2><span>即時庫存狀態分布</span></div><button class="kebab">•••</button></div><div class="donut-wrap"><div class="donut"><div><strong>86%</strong><span>健康</span></div></div><div class="health-list"><div><i class="dot green-dot"></i><span>庫存健康</span><b>86%</b></div><div><i class="dot yellow-dot"></i><span>即將不足</span><b>10%</b></div><div><i class="dot red-dot"></i><span>缺貨風險</span><b>4%</b></div></div></div><div class="health-footer">建議優先處理 <b>4</b> 項低庫存商品</div></section>
+          </div>
+          <section class="panel quick-panel"><div class="panel-header"><div><h2>待處理補貨建議</h2><span>AI 依「定期檢查制」產生，請確認後送出</span></div><button class="outline-button" id="allOrdersButton">查看全部 →</button></div><div class="mini-table"><div class="table-row table-head"><span>商品</span><span>目前庫存</span><span>預測需求</span><span>建議補貨</span><span>狀態</span></div><div class="table-row"><span class="product"><i class="product-icon pink">🥛</i><b>統一鮮乳 936ml</b><small>乳品 · A-01</small></span><span>8 <small>瓶</small></span><span>34 <small>瓶</small></span><span class="recommend">+30 <small>瓶</small></span><span class="tag red-tag">需補貨</span></div><div class="table-row"><span class="product"><i class="product-icon yellow">🍜</i><b>滿漢大餐牛肉麵</b><small>泡麵 · B-12</small></span><span>22 <small>碗</small></span><span>18 <small>碗</small></span><span class="recommend muted">+0 <small>碗</small></span><span class="tag green-tag">庫存充足</span></div><div class="table-row"><span class="product"><i class="product-icon blue">🥤</i><b>茶裏王日式綠茶</b><small>飲料 · C-03</small></span><span>12 <small>瓶</small></span><span>40 <small>瓶</small></span><span class="recommend">+36 <small>瓶</small></span><span class="tag orange-tag">建議補貨</span></div></div></section>
+        </section>
+
+        <section id="ordersView" class="view">
+          <div class="page-heading compact"><div><span class="eyebrow accent">REPLENISHMENT WORKSPACE</span><h1>補貨建議</h1><p>確認 AI 建議數量後送出補貨單，或調整單品數量。</p></div><div class="heading-actions"><span class="auto-label"><i class="toggle on"></i>自動確認已開啟</span><button id="submitOrderButton" class="primary-button">送出補貨單 <span>→</span></button></div></div>
+          <div class="order-summary"><div><span>本次建議</span><strong id="selectedCount">18 <small>項商品</small></strong></div><div><span>預計總金額</span><strong id="totalCost">$8,460</strong></div><div><span>預計到貨</span><strong>明日 06:00</strong></div><div class="summary-tip">✦ AI 已排除促銷、保存期限與安全庫存後的重複補貨</div></div>
+          <section class="panel order-panel"><div class="filter-bar"><div class="tabs"><button class="filter active">全部 <b>18</b></button><button class="filter">需補貨 <b>12</b></button><button class="filter">低庫存 <b>4</b></button><button class="filter">庫存充足 <b>2</b></button></div><div class="filter-actions"><input id="searchInput" placeholder="⌕  搜尋商品..." /><select><option>依優先級排序</option><option>依金額排序</option></select></div></div><div class="order-table"><div class="order-row order-head"><span><input type="checkbox" id="selectAll" checked /></span><span>商品資訊</span><span>現有庫存</span><span>預測需求 <small>(7日)</small></span><span>安全庫存</span><span>建議補貨量</span><span>信心度</span><span>狀態</span></div><div id="orderRows"></div></div></section>
+        </section>
+
+        <section id="modelView" class="view"><div class="page-heading compact"><div><span class="eyebrow accent">AI ENGINE</span><h1>預測與庫存策略</h1><p>透明了解系統如何產生每一次補貨建議。</p></div></div><div class="model-grid"><article class="panel model-card"><div class="model-symbol">⌁</div><h2>加權移動平均</h2><span class="model-badge">需求預測模型</span><p>系統以近 28 日銷售資料為基礎，讓越近期的銷售權重越高，再加入星期、時段與促銷因素，預測未來 7 日需求。</p><div class="formula">預測需求 = Σ（歷史銷量 × 時間權重）<br /><small>× 季節係數 × 促銷係數</small></div></article><article class="panel model-card"><div class="model-symbol orange-symbol">⌂</div><h2>定期檢查制（R,S）</h2><span class="model-badge orange-badge">庫存管理模式</span><p>每天固定時間檢查庫存水位，將庫存補到目標水位 S。目標水位包含交期需求與安全庫存，避免缺貨也不過度囤貨。</p><div class="formula">補貨量 = max（0, 目標水位 − 現有庫存）<br /><small>目標水位 = 預測需求 + 安全庫存</small></div></article></div><section class="panel explain-panel"><h2>一次看懂補貨流程</h2><div class="steps"><div><b>01</b><strong>蒐集資料</strong><span>銷售、庫存、促銷</span></div><i>→</i><div><b>02</b><strong>預測需求</strong><span>加權移動平均</span></div><i>→</i><div><b>03</b><strong>計算建議</strong><span>扣除現有庫存</span></div><i>→</i><div><b>04</b><strong>店長確認</strong><span>送出補貨單</span></div></div></section></section>
+
+        <section id="settingsView" class="view"><div class="page-heading compact"><div><span class="eyebrow accent">STORE PREFERENCES</span><h1>門市設定</h1><p>設定補貨確認方式與庫存管理參數。</p></div><button class="primary-button" id="saveSettings">儲存設定 <span>✓</span></button></div><section class="panel settings-panel"><div class="setting-row"><div><h3>自動確認補貨單</h3><p>AI 產生建議後，自動送出符合條件的補貨單，不需店長逐筆確認。</p></div><label class="switch"><input id="autoConfirm" type="checkbox" /><span></span></label></div><div class="setting-row"><div><h3>自動確認條件</h3><p>僅自動確認信心度「高」且補貨金額低於門市上限的品項。</p></div><span class="setting-value">$10,000 / 高信心度</span></div><div class="setting-row"><div><h3>每日檢查時間</h3><p>系統產生當日補貨建議的時間。</p></div><select class="setting-select"><option>10:00</option><option>14:00</option><option>22:00</option></select></div></section></section>
+      </main>
+    </div>
+    <div id="toast" class="toast"></div>
+    <div id="modal" class="modal-backdrop"><div class="modal"><button class="modal-close" id="closeModal">×</button><div class="modal-icon">✓</div><h2>確認送出補貨單？</h2><p>本次將送出 <b id="modalCount">18 項商品</b>，預計金額 <b id="modalCost">$8,460</b>。統家物流將於明日 06:00 配送。</p><div class="modal-actions"><button class="outline-button" id="cancelModal">返回調整</button><button class="primary-button" id="confirmOrder">確認送出 <span>→</span></button></div></div></div>
+    <script src="app.js"></script>
+  </body>
+</html>
